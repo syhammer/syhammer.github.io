@@ -4,15 +4,20 @@ class LoadingPage extends Page
   {
     super('Loading',0,function(page){
       push();
-      background(51);
+      background(0);
       var totalSize = width*0.75;
       var progress = game.getProcessor('Asset Manager').loadingProgress();
-      fill(30);
+      var blueColor = game.getProcessor('Color Manager')['blue-team-1'];
+      var redColor = game.getProcessor('Color Manager')['red-team-1'];
+      var size = progress*totalSize*0.5;
+      fill(100);
       noStroke();
       rectMode(CENTER);
-      rect(width/2,height/2,totalSize,5,2.5);
-      fill(69, 164, 204);
-      rect(width/2,height/2,progress*totalSize,5,2.5);
+      rect(width/2,height/2,totalSize,5);
+      fill(blueColor);
+      rect(width/2-size/2,height/2,size,5);
+      fill(redColor);
+      rect(width/2+size/2,height/2,size,5);
       fill(255);
       noStroke();
       textAlign(CENTER,CENTER);
@@ -29,11 +34,11 @@ class LoadingPage extends Page
       push();
       button.update();
       var progress = game.getProcessor('Asset Manager').loadingProgress();
-      fill(30);
-      stroke(69, 164, 204);
+      fill(255*button.hoverValue);
+      stroke(255);
       strokeWeight(progress*5);
-      rect(-button.hoverValue*10*(progress==1),0,button.size.x+button.hoverValue*20*(progress==1),button.size.y,17.5);
-      fill(255);
+      rect(0,0,button.size.x,button.size.y);
+      fill(255-255*button.hoverValue);
       noStroke();
       textSize(20);
       textAlign(CENTER,CENTER);
@@ -41,11 +46,9 @@ class LoadingPage extends Page
       if (progress == 1)
       {
         text('Continue',button.size.x/2,button.size.y/2+2);
-        button.size.x = lerp(button.size.x,160,0.15);
       } else
       {
         text(round(progress*100)+'%',button.size.x/2,button.size.y/2+2);
-        button.size.x = lerp(button.size.x,100,0.15);
       }
       pop();
     },function(button){
@@ -57,6 +60,7 @@ class LoadingPage extends Page
       return false;
     });
     button.anchorToPoint(0.5,0.5);
+    button.hoverDelta = 1;
     this.addElement(button);
     this.active = true;
     this.dots.play();

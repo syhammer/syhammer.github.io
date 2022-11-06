@@ -1,5 +1,10 @@
 function Configure(game)
 {
+  // COLOR MANAGER
+  var colorManager = game.getProcessor('Color Manager');
+  colorManager.add('blue-team-1',color(52, 164, 235));
+  colorManager.add('red-team-1',color(224, 61, 61));
+
   // ASSET MANAGER
   var assetManager = game.getProcessor('Asset Manager');
 
