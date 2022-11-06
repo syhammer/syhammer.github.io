@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Dosis; src: url('fonts/Dosis-VariableFont_wght.ttf');
+  font-weight:500;
+}
+
+@font-face {
+  font-family: Exo; src: url('fonts/Exo-VariableFont_wght.ttf');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}
+
+canvas {
+  display: block;
+}
