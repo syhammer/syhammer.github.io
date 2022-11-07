@@ -3,6 +3,8 @@ class Game extends ProcessDrivenObject
   constructor()
   {
     super();
+    var params = getURLParams();
+    this.id = params.id;
   }
 
   main()

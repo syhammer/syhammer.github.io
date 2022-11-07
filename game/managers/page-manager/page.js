@@ -30,4 +30,12 @@ class Page
   {
     this.elements.push(element);
   }
+
+  elementsCheckClick()
+  {
+    for (var i = this.elements.length-1; i >= 0; i--)
+    {
+      this.elements[i].clickEvent();
+    }
+  }
 }

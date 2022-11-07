@@ -3,8 +3,9 @@ class DotAnimation extends Animation
   constructor()
   {
     super(function(animation){
+      var pageManager = game.getProcessor('Page Manager');
       var dots = 4;
-      var dotSize = 10;
+      var dotSize = 10*pageManager.scale;
       var totalTime = animation.position/animation.length;
       var tippingPoint = 0.8;
       var multiplier = totalTime*tippingPoint;
@@ -13,7 +14,7 @@ class DotAnimation extends Animation
       noStroke();
       for (var i = 0; i < constrain(dots,0,3); i++)
       {
-        var x = i*15;
+        var x = i*15*pageManager.scale;
         var w = constrain(dots*multiplier-i,0,1)*dotSize;
         var h = (totalTime > tippingPoint)?power_map(totalTime,tippingPoint,1,dotSize,0):dotSize;
         ellipse(x,0,w,h);

@@ -2,7 +2,7 @@ var game;
 
 function setup()
 {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(window.innerWidth,window.innerHeight);
 
   game = new Game();
   game.setup();
