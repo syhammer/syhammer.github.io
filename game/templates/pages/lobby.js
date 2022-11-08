@@ -29,7 +29,7 @@ class LobbyPage extends Page
       textSize(20*pageManager.scale);
       textAlign(CENTER,CENTER);
       textFont('Exo');
-      text('Challenge Player',0,2);
+      text('Challenge Player',0,2*pageManager.scale);
       pop();
     },function(button){
       var pageManager = game.getProcessor('Page Manager');

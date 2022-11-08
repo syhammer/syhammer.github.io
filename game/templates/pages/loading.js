@@ -50,10 +50,10 @@ class LoadingPage extends Page
       textFont('Exo');
       if (progress == 1)
       {
-        text('Continue',0,2);
+        text('Continue',0,2*pageManager.scale);
       } else
       {
-        text(round(progress*100)+'%',0,2);
+        text(round(progress*100)+'%',0,2*pageManager.scale);
       }
       pop();
     },function(button){

@@ -39,6 +39,11 @@ class Popup extends Page
     this.elementsCheckClick();
   }
 
+  keyPressed()
+  {
+    this.elementsCheckTyped();
+  }
+
   close()
   {
     this.active = false;

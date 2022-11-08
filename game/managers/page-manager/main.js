@@ -86,6 +86,33 @@ class PageManager
     }
   }
 
+  keyPressed()
+  {
+    var blockPages = false;
+    for (var i = this.popups.length-1; i >= 0; i--)
+    {
+      if (this.popups[i].active)
+      {
+        if (this.popups[i].blockPages)
+        {
+          blockPages = true;
+        }
+        this.popups[i].keyPressed();
+      }
+    }
+    if (blockPages)
+    {
+      return;
+    }
+    for (var j = this.pages.length-1; j >= 0; j--)
+    {
+      if (this.pages[j].active)
+      {
+        this.pages[j].keyPressed();
+      }
+    }
+  }
+
   windowResized()
   {
     resizeCanvas(window.innerWidth,window.innerHeight);

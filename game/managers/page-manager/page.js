@@ -31,6 +31,25 @@ class Page
     this.elements.push(element);
   }
 
+  mousePressed()
+  {
+    this.elementsCheckClick();
+  }
+
+  keyPressed()
+  {
+    this.elementsCheckTyped();
+  }
+
+  elementsCheckTyped()
+  {
+    for (var i = this.elements.length-1; i >= 0; i--)
+    {
+      if (!this.elements[i].typeEvent) continue;
+      this.elements[i].typeEvent();
+    }
+  }
+
   elementsCheckClick()
   {
     for (var i = this.elements.length-1; i >= 0; i--)

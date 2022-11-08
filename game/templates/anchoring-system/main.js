@@ -24,8 +24,8 @@ class AnchoringSystem
     var h = (this.parentAnchor)?this.parentAnchor.size.y:height;
     if (this.anchorSettings.div)
     {
-      this.position.x = x+w*this.anchorSettings.div.x+this.anchorSettings.margin.x;
-      this.position.y = y+h*this.anchorSettings.div.y+this.anchorSettings.margin.y;
+      this.position.x = x+w*this.anchorSettings.div.x+this.anchorSettings.margin.x*pageManager.scale;
+      this.position.y = y+h*this.anchorSettings.div.y+this.anchorSettings.margin.y*pageManager.scale;
     }
     translate(this.position.x+this.size.x*this.anchorSettings.offset.x,this.position.y+this.size.y*this.anchorSettings.offset.y);
     this.updateParent();
