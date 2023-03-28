@@ -1,7 +1,72 @@
 .header {
-  font-family:Manrope;
+  font-family:"Manrope";
 }
 
 #title {
   padding-left:1em;
+}
+
+#filaments-title {
+  padding-left:2em;
+  font-weight:bold;
+}
+
+.button {
+  border:none;
+  background-color:#F69856;
+  transition:background-color 0.25s;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+.button:hover {
+  border:none;
+  background-color:#E48441;
+}
+
+.stat {
+  font-family:"Manrope";
+  font-size:1.5em;
+  font-weight:bold;
+  text-align:center;
+}
+
+.stat-value {
+  font-family:"Trebuchet MS";
+  font-size:1.25em;
+  font-weight:normal;
+}
+
+.can-afford {
+  color:rgb(51,51,51);
+  font-style:italic;
+}
+
+.no-afford {
+  color:rgb(255,0,0);
+  font-style:italic;
+}
+
+.filament-title {
+  font-family:"Trebuchet MS";
+  font-size:1.5em;
+  font-weight:bold;
+  text-align:left;
+}
+
+.filament-grams {
+  font-family:"Trebuchet MS";
+  font-size:1.5em;
+  text-align:right;
+  padding-left:1em;
+}
+
+.filament-buy-spool-button {
+  font-family:"Trebuchet MS";
+  font-size:1.25em;
+  text-align:center;
+  margin-left:1em;
+  margin-bottom:5px;
+  margin-top:5px;
+  padding:0.25em;
 }

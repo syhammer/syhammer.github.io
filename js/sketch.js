@@ -1,15 +1,13 @@
 var cookies;
+var game;
 
 function setup()
 {
-  cookies = new Cookies();
-
-  cookies.set("Money","0");
-
-  console.log(cookies.get("Money"))
+  game = new Game();
+  game.init();
 }
 
 function draw()
 {
-
+  
 }
