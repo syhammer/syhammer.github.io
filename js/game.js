@@ -162,6 +162,7 @@ class Game
   init()
   {
     this.initVariables();
+    this.updateHTML();
   }
 
   initVariables()
