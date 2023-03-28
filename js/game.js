@@ -167,6 +167,7 @@ class Game
 
   initVariables()
   {
+    console.log(this.variables)
     if (this.cookies.get("variables"))
     {
       this.resetVariables();
