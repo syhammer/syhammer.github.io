@@ -5,9 +5,11 @@ function setup()
 {
   game = new Game();
   game.init();
+
+  //
 }
 
 function draw()
 {
-  
+
 }
