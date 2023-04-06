@@ -323,12 +323,21 @@ class Game
   {
     var now = new Date();
 
-    var timeLeft = (printer.job.endTime.getTime()-now.getTime())/60000;
-    var timeElapsed = (now.getTime()-printer.job.startTime.getTime())/60000;
+    var startTime = Date.parse(printer.job.startTime);
+    var endTime = Date.parse(printer.job.endTime);
+    var errorTime;
+
+    if (printer.job.errorTime)
+    {
+      errorTime = Date.parse(printer.job.errorTime);
+    }
+
+    var timeLeft = (endTime.getTime()-now.getTime())/60000;
+    var timeElapsed = (now.getTime()-startTime.getTime())/60000;
 
     printer.job.filamentGramsSpent = (timeElapsed/printer.job.printTime)*printer.job.filamentGrams;
 
-    if (printer.job.errorTime && printer.job.errorTime.getTime() >= now.getTime())
+    if (printer.job.errorTime && errorTime.getTime() >= now.getTime())
     {
       this.variables.filament[printer.job.filament].grams-=printer.job.filamentGramsSpent;
       printer.error = this.getPrinterErrorMessage(printer.type);
