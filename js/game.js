@@ -323,13 +323,13 @@ class Game
   {
     var now = new Date();
 
-    var startTime = Date.parse(printer.job.startTime);
-    var endTime = Date.parse(printer.job.endTime);
+    var startTime = new Date(Date.parse(printer.job.startTime));
+    var endTime = new Date(Date.parse(printer.job.endTime));
     var errorTime;
 
     if (printer.job.errorTime)
     {
-      errorTime = Date.parse(printer.job.errorTime);
+      errorTime = new Date(Date.parse(printer.job.errorTime));
     }
 
     var timeLeft = (endTime.getTime()-now.getTime())/60000;
