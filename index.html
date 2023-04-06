@@ -18,20 +18,31 @@
   </head>
 
   <body>
-    <h1 id="title" class="header">3D Printer Game</h1>
-    <div id="stats">
-      <table id="stats-table">
-        <tr id="stats-row">
-          <td id="money" class="stat"></td>
-        </tr>
-      </table>
-    </div>
-    <div id="filaments">
-      <h2 id="filaments-title" class="header">Filaments</h2>
-      <table id="filament-table"></table>
+    <div id="wrapper">
+      <h1 id="title" class="header">3D Printer Game</h1>
+
+      <div id="stats">
+        <table id="stats-table">
+          <tr id="stats-row">
+            <td id="money" class="stat"></td>
+            <td id="clientele" class="stat"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="filaments">
+        <h2 id="filaments-title" class="header">Filaments</h2>
+        <table id="filament-table"></table>
+      </div>
+
+      <div id="printers">
+        <h2 id="printers-title" class="header">Printers</h2>
+        <ul id="printers-list"></ul>
+      </div>
     </div>
 
     <script src="js/cookies.js"></script>
+    <script src="js/id-generator.js"></script>
     <script src="js/game.js"></script>
     <script src="js/sketch.js"></script>
     <script src="js/loop.js"></script>
