@@ -822,8 +822,7 @@ class Game
 
   resetVariables()
   {
-    console.log(this.cookies.get("variables"));
-    this.variables = JSON.parse(this.cookies.get("variables"));
+    this.variables = JSON.parse(this.cookies.get("variables").replace("variables=",""));
   }
 
   updateVariables()
